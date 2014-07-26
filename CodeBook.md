@@ -34,7 +34,8 @@ Fist explain the statistic terms within all the column names:
 **kurtosis()**: kurtosis of the frequency domain signal 
 
 **bandsEnergy()**: Energy of a frequency interval within the 64 bins of the FFT of each window.
-               The two numbers at the end of it are the measurement range. Then follows the dummy index to keep these feature names different.
+The two numbers at the end of it are the measurement range. Then follows the dummy index to keep these feature names different.
+
                
 **angle(...)**:  Additional vectors obtained by averaging the signals in a signal window    
              sample. These are used on the variable:
