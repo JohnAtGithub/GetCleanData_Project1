@@ -1,54 +1,76 @@
-# This document explains all the column names in the clean dataset
+Code book for clean data table "cleanDataset.txt"
+---------------------------------------------------------------
 
 Fist explain the statistic terms within all the column names:
 
-mean(): Mean value
-std(): Standard deviation
-mad(): Median absolute deviation 
-max(): Largest value in array
-min(): Smallest value in array
-sma(): Signal magnitude area
-energy(): Energy measure. Sum of the squares divided by the number of values. 
-iqr(): Interquartile range 
-entropy(): Signal entropy
-arCoeff(): Autorregresion coefficients with Burg order equal to 4
-correlation()-X,Y: correlation coefficient between two signals in directions X and Y
-maxInds(): index of the frequency component with largest magnitude
-meanFreq(): Weighted average of the frequency components to obtain a mean frequency
-skewness(): skewness of the frequency domain signal 
-kurtosis(): kurtosis of the frequency domain signal 
-bandsEnergy(): Energy of a frequency interval within the 64 bins of the FFT of each window.
-               The two numbers X,Y attached to the end of it are the measurement range. Then follows the dummy index to keep these feature names different.
-angle(...):  Additional vectors obtained by averaging the signals in a signal window    
+**mean()**: Mean value
+
+**std()**: Standard deviation
+
+**mad()**: Median absolute deviation 
+
+**max()**: Largest value in array
+
+**min()**: Smallest value in array
+
+**sma()**: Signal magnitude area
+
+**energy()**: Energy measure. Sum of the squares divided by the number of values.
+
+**iqr()**: Interquartile range 
+
+**entropy()**: Signal entropy
+
+**arCoeff()**: Autorregresion coefficients with Burg order equal to 4
+
+**correlation()-X,Y**: correlation coefficient between two signals in directions X and Y
+
+**maxInds()**: index of the frequency component with largest magnitude
+
+**meanFreq()**: Weighted average of the frequency components to obtain a mean frequency
+
+**skewness()**: skewness of the frequency domain signal 
+
+**kurtosis()**: kurtosis of the frequency domain signal 
+
+**bandsEnergy()**: Energy of a frequency interval within the 64 bins of the FFT of each window.
+               The two numbers at the end of it are the measurement range. Then follows the dummy index to keep these feature names different.
+               
+**angle(...)**:  Additional vectors obtained by averaging the signals in a signal window    
              sample. These are used on the variable:
                 gravityMean,tBodyAccMean,tBodyAccJerkMean,tBodyGyroMean,tBodyGyroJerkMean
 
 Then the terms about tri-axis:
--X: X-axis
--Y: Y-axis
--Z: Z-axis
+
+**-X**: X-axis
+
+**-Y**: Y-axis
+
+**-Z**: Z-axis
 
 
 The column name is a vector with length 563. The first two column specify the subject
-and the activity.
+and the activity:
 
-subjectName: the name of subject, ranging from 1 to 30
+1. *subjectName*: the name of subject, ranging from 1 to 30
 
-activityName: 5 activities measured in the experiment: 
+2. *activityName*: 5 activities measured in the experiment: 
 				WALKING,WALKING_UPSTAIRS,WALKING_DOWNSTAIRS,SITTING,STANDING,LAYING
 
 The following columns are the measurements from the experiment. All the statistic terms 
-in them have been explained above. Following are the column index and corresponding column names from column 3 to the last column. They are quite self-explaintory.
+in them have been explained above. Following are the column index and corresponding column names from column 3 to the last column. They are quite self-explaintory, so I give only a few examples.
 
 
 
-    3         timeDomainBodyAcceleration-mean()-X    
+    3         timeDomainBodyAcceleration-mean()-X:
+                    *x-component of the mean of boday acceleration in time domin*
     4         timeDomainBodyAcceleration-mean()-Y    
     5         timeDomainBodyAcceleration-mean()-Z    
     6         timeDomainBodyAcceleration-std()-X    
     7         timeDomainBodyAcceleration-std()-Y    
     8         timeDomainBodyAcceleration-std()-Z    
-    9         timeDomainBodyAcceleration-mad()-X    
+    9         timeDomainBodyAcceleration-mad()-X 
+                    *magnitude of the mean of boday acceleration in time domin*
     10         timeDomainBodyAcceleration-mad()-Y    
     11         timeDomainBodyAcceleration-mad()-Z    
     12         timeDomainBodyAcceleration-max()-X    
@@ -57,7 +79,8 @@ in them have been explained above. Following are the column index and correspond
     15         timeDomainBodyAcceleration-min()-X    
     16         timeDomainBodyAcceleration-min()-Y    
     17         timeDomainBodyAcceleration-min()-Z    
-    18         timeDomainBodyAcceleration-sma()    
+    18         timeDomainBodyAcceleration-sma()  
+                    *Signal magnitude area of boday acceleration in time domin*
     19         timeDomainBodyAcceleration-energy()-X    
     20         timeDomainBodyAcceleration-energy()-Y    
     21         timeDomainBodyAcceleration-energy()-Z    
@@ -67,7 +90,8 @@ in them have been explained above. Following are the column index and correspond
     25         timeDomainBodyAcceleration-entropy()-X    
     26         timeDomainBodyAcceleration-entropy()-Y    
     27         timeDomainBodyAcceleration-entropy()-Z    
-    28         timeDomainBodyAcceleration-arCoeff()-X,1    
+    28         timeDomainBodyAcceleration-arCoeff()-X,1   
+                    *Autorregresion coefficients with Burg order 1, x-component in time domine*
     29         timeDomainBodyAcceleration-arCoeff()-X,2    
     30         timeDomainBodyAcceleration-arCoeff()-X,3    
     31         timeDomainBodyAcceleration-arCoeff()-X,4    
@@ -80,6 +104,7 @@ in them have been explained above. Following are the column index and correspond
     38         timeDomainBodyAcceleration-arCoeff()-Z,3    
     39         timeDomainBodyAcceleration-arCoeff()-Z,4    
     40         timeDomainBodyAcceleration-correlation()-X,Y    
+                    *Correlation of X and Y component of boday acceleration in time domin*
     41         timeDomainBodyAcceleration-correlation()-X,Z    
     42         timeDomainBodyAcceleration-correlation()-Y,Z    
     43         timeDomainGravityAcceleration-mean()-X    
@@ -344,7 +369,8 @@ in them have been explained above. Following are the column index and correspond
     302         frequencyDomainBodyAcceleration-kurtosis()-Y    
     303         frequencyDomainBodyAcceleration-skewness()-Z    
     304         frequencyDomainBodyAcceleration-kurtosis()-Z    
-    305         frequencyDomainBodyAcceleration-bandsEnergy()-1,8.1    
+    305         frequencyDomainBodyAcceleration-bandsEnergy()-1,8.1  
+                    *Energy of a frequency interval within bin 1 and bin 8 for body acceleration at frequency domin, '.1' is a dummy index, because several lines below share the same name with it*
     306         frequencyDomainBodyAcceleration-bandsEnergy()-9,16.2    
     307         frequencyDomainBodyAcceleration-bandsEnergy()-17,24.3    
     308         frequencyDomainBodyAcceleration-bandsEnergy()-25,32.4    
